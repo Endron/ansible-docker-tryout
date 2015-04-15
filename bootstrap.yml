@@ -1,0 +1,15 @@
+---
+- name: bootstrap docker vm
+  hosts: docker
+
+  tasks:
+  - name: install phython
+    sudo: true
+    apt: name=python state=present
+  - name: install python-pip
+    sudo: true
+    apt: name=python-pip state=present
+  - name: install docker-py
+    sudo: true
+    pip: name=docker-py
+
