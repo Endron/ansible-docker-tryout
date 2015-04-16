@@ -4,6 +4,12 @@
 Vagrant.configure(2) do |config|
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
+
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 4096
+    v.cpus = 4
+  end
+
   config.vm.define "docker" do |docker|
     docker.vm.box = "ubuntu/trusty64"
     docker.vm.provision "docker"
