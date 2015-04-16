@@ -3,16 +3,10 @@
   hosts: docker
 
   tasks:
-  - name: stop jenkins
-    docker:
-      image: "jenkins"
-      state: "absent"
-
   - name: deploy jenkins
     docker: 
       name: "jenkins"
       image: "jenkins:1.593"
-#      count: 3
       detach: true
       pull: always
       state: reloaded
